@@ -52,5 +52,6 @@ class Solution {
         for (int i = 1; i < size - 1; i++) {
             ans+=Math.min(left_max[i], right_max[i]) - height[i];
         }
+        return ans;
     }
 }
