@@ -1,5 +1,8 @@
 package Dp.problem28;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * @author: Spaeurs
  * @date: 2021/7/24 20:13
@@ -51,6 +54,48 @@ class Solution {
         }
         for (int i = 1; i < size - 1; i++) {
             ans+=Math.min(left_max[i], right_max[i]) - height[i];
+        }
+        return ans;
+    }
+
+    //3.使用栈
+    public int trap2(int[] height) {
+        int ans = 0, current = 0;
+        Deque<Integer> stack = new LinkedList<>();
+        while (current< height.length){
+            while (!stack.isEmpty()&&height[current]>height[stack.peek()]){
+                int top = stack.pop();
+                if (stack.isEmpty()) break;
+                int distance = current-stack.peek()-1;
+                int bounded_height = Math.min(height[current],height[stack.peek()]) - height[top];
+                ans += distance*bounded_height;
+            }
+            stack.push(current++);
+        }
+        return ans;
+    }
+
+    //4.双指针
+    public int trap3(int[] height) {
+        int left = 0, right = height.length - 1;
+        int ans = 0;
+        int left_max = 0, right_max = 0;
+        while (left < right) {
+            if (height[left] < height[right]) {
+                if (height[left] >= left_max) {
+                    left_max = height[left];
+                } else {
+                    ans += (left_max - height[left]);
+                }
+                ++left;
+            }else {
+                if (height[right] >= right_max){
+                    right_max = height[right];
+                }else {
+                    ans += (right_max - height[right]);
+                }
+                --right;
+            }
         }
         return ans;
     }
