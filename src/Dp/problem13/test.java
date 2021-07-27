@@ -8,7 +8,8 @@ import java.util.Map;
  * @date: 2021/7/12 19:13
  * @description: 剑指 Offer 49. 丑数
  * <p>
- * 我们把只包含质因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
+ * 我们把只包含质因子 2、3 和 5 的数称作丑数（Ugly Number）。
+ * 求按从小到大的顺序的第 n 个丑数。
  */
 public class test {
     public static void main(String[] args) {
@@ -51,5 +52,21 @@ class Solution {
             if (dp[i] == n5) c++;
         }
         return dp[n - 1];
+    }
+
+    public int nthUglyNumber2(int n){
+        int[] dp = new int[n];
+        dp[0] = 1;
+        int a=0, b= 0,c = 0;
+        for (int i = 1; i < n; i++) {
+            int min1 = dp[a] * 2;
+            int min2 = 3 * dp[b];
+            int min3 = 5 * dp[c];
+            dp[i] = Math.min(Math.min(min1,min2),min3);
+            if (dp[i] == min1) a++;
+            if (dp[i] == min2) b++;
+            if (dp[i] == min3) c++;
+        }
+        return dp[n-1];
     }
 }

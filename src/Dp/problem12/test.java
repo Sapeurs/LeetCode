@@ -41,7 +41,7 @@ public class test {
         triangle.add(list3);
         triangle.add(list4);
         Solution solution = new Solution();
-        System.out.println(solution.minimumTotal(triangle));
+        System.out.println(solution.minimumTotal1(triangle));
     }
 }
 
@@ -50,7 +50,7 @@ class Solution {
     public int minimumTotal(List<List<Integer>> triangle) {
         int len = triangle.size();
         int[] dp = new int[len];
-        int[] temp = new int[len];
+        int[] temp;
         dp[0] = triangle.get(0).get(0);
         for (int i = 1; i < len; i++) {
             temp = dp.clone();
@@ -66,5 +66,22 @@ class Solution {
         }
         Arrays.sort(dp);
         return dp[0];
+    }
+
+    public int minimumTotal1(List<List<Integer>> triangle){
+        int len = triangle.size();
+        for (int i = 1; i < len; i++) {
+            for (int j = 0; j <= i; j++) {
+                int num = triangle.get(i).get(j);
+                if (j == i)
+                    triangle.get(i).set(j,num + triangle.get(i-1).get(j-1));
+                else if (j == 0)
+                    triangle.get(i).set(j,num + triangle.get(i-1).get(j));
+                else
+                triangle.get(i).set(j,Math.min(triangle.get(i-1).get(j),triangle.get(i-1).get(j-1)) + num);
+            }
+        }
+        triangle.get(len-1).sort(null);
+        return triangle.get(len-1).get(0);
     }
 }

@@ -1,4 +1,4 @@
-package IOPractise;
+package fileCopyByIO;
 
 import java.io.*;
 
