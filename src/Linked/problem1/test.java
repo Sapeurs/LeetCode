@@ -1,7 +1,9 @@
 package Linked.problem1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * @author: Sapeurs
@@ -10,6 +12,15 @@ import java.util.List;
  * 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
  */
 public class test {
+    public static void main(String[] args) {
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(3);
+        ListNode node3 = new ListNode(2);
+        node1.next = node2;
+        node2.next = node3;
+        Solution1 solution = new Solution1();
+        System.out.println(Arrays.toString(solution.reversePrint(node1)));
+    }
 }
 
 class Solution {
@@ -50,6 +61,20 @@ class Solution1 {
         solve(head.next);
         res[j] = head.val;
         j++;
+    }
+
+    //用栈实现
+    public int[] reversePrint1(ListNode head) {
+        Stack<Integer> stack = new Stack<>();
+        while (head != null){
+            stack.push(head.val);
+            head = head.next;
+        }
+        int[] res = new int[stack.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = stack.pop();
+        }
+        return res;
     }
 }
 

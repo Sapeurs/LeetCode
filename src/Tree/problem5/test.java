@@ -56,6 +56,11 @@ class Solution {
             return left; // 否则，如果 left不为空，在左子树中有找到节点（p或q），这时候要再判断一下右子树中的情况，如果在右子树中，p和q都找不到，则 p和q一定都在左子树中，左子树中先遍历到的那个就是最近公共祖先（一个节点也可以是它自己的祖先）
         else return root; //否则，当 left和 right均不为空时，说明 p、q节点分别在 root一侧, 最近公共祖先即为 root
     }
+
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q){
+        if (p == root || q == root) return root;
+        return null;
+    }
 }
 
 

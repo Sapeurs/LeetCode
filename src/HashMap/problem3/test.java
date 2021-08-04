@@ -10,9 +10,6 @@ public class test {
 //        Solution solution = new Solution();
 //        int[] nums = new int[]{2,4,1,1,2};
 //        System.out.println(solution.singleNumber(nums));
-        List list = new ArrayList();
-
-
         int n = 10;
         System.out.println(n / 10);
     }

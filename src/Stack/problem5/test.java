@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * @author: Sapeurs
  * @date: 2021/4/2 21:16
- * @description:
+ * @description: 两个队列实现栈
  */
 public class test {
     public static void main(String[] args) {
