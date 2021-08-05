@@ -51,8 +51,11 @@ class Solution1 {
     }
 
     private int dfs(boolean[][] visited, int m, int n, int k, int i, int j) {
-        if (i >= m || j >= n || visited[i][j] || bitSum(i) + bitSum(j) > k) return 0;
+        if (i >= m || j >= n || visited[i][j] || bitSum(i) + bitSum(j) > k)
+            return 0;
+        //代表已经访问过
         visited[i][j] = true;
+        //机器人可以仅通过向右和向下移动，访问所有可达解。
         return 1 + dfs(visited, m, n, k, i + 1, j) + dfs(visited, m, n, k, i, j + 1);
     }
 

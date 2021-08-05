@@ -5,7 +5,8 @@ import java.util.Arrays;
 /**
  * @author: Sapeurs
  * @date: 2021/4/19 21:49
- * @description: 34. 给定一个按照升序排列的整数数组 nums，和一个目标值 target。
+ * @description: 34. 在排序数组中查找元素的第一个和最后一个位置
+ * 给定一个按照升序排列的整数数组 nums，和一个目标值 target。
  * 找出给定目标值在数组中的开始位置和结束位置。
  * <p>
  * 如果数组中不存在目标值 target，返回[-1, -1]。
@@ -27,8 +28,6 @@ class Solution {
         if (leftIdx <= rightIdx && rightIdx < nums.length && nums[leftIdx] == target && nums[rightIdx] == target) {
             return new int[]{leftIdx, rightIdx};
         }
-
-
         return new int[]{-1, -1};
     }
 

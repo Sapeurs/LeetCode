@@ -58,8 +58,13 @@ class Solution {
     }
 
     public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q){
+        if (root == null) return null;
         if (p == root || q == root) return root;
-        return null;
+        TreeNode lnode = lowestCommonAncestor2(root.left, p, q);
+        TreeNode rnode = lowestCommonAncestor2(root.right, p, q);
+        if (lnode == null) return rnode;
+        if (rnode == null) return lnode;
+        return root;
     }
 }
 

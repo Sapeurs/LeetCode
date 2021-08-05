@@ -36,10 +36,20 @@ class Solution {
         return false;
     }
 
+    /**
+     *
+     * @param board
+     * @param word
+     * @param i
+     * @param j
+     * @param k 要寻找的第k个字符
+     * @return
+     */
     boolean dfs(char[][] board, char[] word, int i, int j, int k) {
         //如果i,j超出边界或者board[i][j]不等于work中第k个字符时，返回false
         if (i >= board.length || i < 0 || j >= board[0].length || j < 0 || board[i][j] != word[k])
             return false;
+        //已经找到最后一个字符
         if (k == word.length - 1)
             return true;
         board[i][j] = '\0';
