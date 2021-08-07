@@ -2,6 +2,7 @@ package Jdk8.java1;
 
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
@@ -44,6 +45,7 @@ public class LambdaTest {
         int compare1 = com1.compare(12, 21);
         System.out.println(compare1);
 
+        ArrayList<Integer> list = new ArrayList<>();
         System.out.println("********************");
 
         //当Lambda体只有一条语句时，return与大括号都可以省略
