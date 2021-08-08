@@ -1,4 +1,4 @@
-package string.problem6;
+package TraceBack.problem1;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -27,7 +27,7 @@ import java.util.List;
 public class test {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(Arrays.toString(solution.permutation("abc")));
+        System.out.println(Arrays.toString(solution.permutation("aba")));
     }
 }
 
@@ -69,33 +69,33 @@ class Solution {
     }
 }
 
-class Solution1 {
-
-    List<String> res = new LinkedList<>();
-
-    public String[] permutation(String s) {
-        LinkedList<Character> list = new LinkedList<>();
-        dfs(s.toCharArray(),list);
-        return res.toArray(new String[0]);
-    }
-
-    /**
-     *
-     * @param chars 路径
-     * @param list 选择列表
-     */
-    void dfs(char[] chars, LinkedList<Character> list){
-        if (list.size() == chars.length){
-            res.add(String.valueOf(list));
-            return;
-        }
-
-        for (int i = 0; i < chars.length; i++) {
-            if (list.contains(chars[i])) continue;
-            list.add(chars[i]);
-            dfs(chars,list);
-            list.removeLast();
-        }
-    }
-
-}
+//class Solution1 {
+//
+//    List<String> res = new LinkedList<>();
+//
+//    public String[] permutation(String s) {
+//        LinkedList<Character> list = new LinkedList<>();
+//        dfs(s.toCharArray(),list);
+//        return res.toArray(new String[0]);
+//    }
+//
+//    /**
+//     *
+//     * @param chars 路径
+//     * @param list 选择列表
+//     */
+//    void dfs(char[] chars, LinkedList<Character> list){
+//        if (list.size() == chars.length){
+//            res.add(String.valueOf(list));
+//            return;
+//        }
+//
+//        for (int i = 0; i < chars.length; i++) {
+//            if (list.contains(chars[i])) continue;
+//            list.add(chars[i]);
+//            dfs(chars,list);
+//            list.removeLast();
+//        }
+//    }
+//
+//}
