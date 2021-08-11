@@ -1,4 +1,4 @@
-package Search.problem7;
+package Search.missingNumber;
 
 /**
  * @author: Sapeurs
