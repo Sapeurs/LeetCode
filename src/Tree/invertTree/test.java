@@ -22,6 +22,19 @@ class Solution {
 
         return root;
     }
+
+    public TreeNode invertTree1(TreeNode root) {
+        if (root == null) return null;
+
+        TreeNode tmp = root.left;
+        root.left = root.right;
+        root.right = tmp;
+
+        invertTree1(root.left);
+        invertTree1(root.right);
+
+        return root;
+    }
 }
 
 class TreeNode {
