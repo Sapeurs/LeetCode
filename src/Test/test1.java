@@ -25,5 +25,26 @@ public class test1 {
             ans = Math.max(len, ans);
         }
         System.out.println(ans);
+        P p = new C();
     }
+}
+
+class P{
+    double a(){
+        return 0;
+    }
+}
+
+class C extends P{
+    int A(){
+        return 0;
+    }
+
+//    double a() {
+//        return 0;
+//    }
+
+//    void a(){
+//        return 0;
+//    }
 }
