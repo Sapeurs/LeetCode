@@ -27,7 +27,7 @@ public class test {
 
 //        preOrderRe(node[0]);
 //        System.out.println();
-//        preOrder(node[0]);
+        preOrder(node[0]);
 
         postOrder(node[0]);
     }
@@ -45,11 +45,14 @@ public class test {
     public static void preOrder(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         while (root != null || !stack.isEmpty()) {
+            //将左子树不断压入栈
             while (root != null) {
+                //先访问再入栈
                 System.out.println(root.val);
                 stack.push(root);
                 root = root.left;
             }
+            //出栈并处理右子树
             if (!stack.isEmpty()) {
                 root = stack.pop();
                 root = root.right;
@@ -74,6 +77,7 @@ public class test {
                 stack.push(root);
                 root = root.left;
             }
+            //左子树进栈完毕
             if (!stack.isEmpty()) {
                 root = stack.pop();
                 System.out.println(root.val);
