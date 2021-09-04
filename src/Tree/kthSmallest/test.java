@@ -15,8 +15,11 @@ public class test {
 class Solution {
 
     public int kthSmallest(TreeNode root, int k) {
-      //利用BST的中序遍历
-        return 0;
+        //利用BST的中序遍历
+        traverse(root,k);
+
+
+        return res;
     }
 
     //记录当前元素的排名
@@ -29,8 +32,11 @@ class Solution {
         traverse(root.left, k);
         rank++;
         if (k == rank){
-
+            //找到第k小的元素
+            res = root.val;
+            return;
         }
+        traverse(root.right,k);
     }
 }
 
