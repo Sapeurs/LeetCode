@@ -19,4 +19,8 @@ public class test2 {
         }
         System.out.println(44);
     }
+    static int i = 0;
+    public void tes(){
+        i=1;
+    }
 }
