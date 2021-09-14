@@ -1,5 +1,7 @@
 package Test;
 
+import java.io.*;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -8,7 +10,7 @@ import java.util.Scanner;
  * @description:
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 //        Scanner sc = new Scanner(System.in);
 //        int n = sc.nextInt();
 //        int w = sc.nextInt();
@@ -34,8 +36,24 @@ public class Main {
 //        System.out.println(cost);
 //
 //        String s = "abcdefg";
-        String str1 = "hello";
-        String str2 = new String("hello").intern();
-        System.err.println(str1 == str2);
+//        String str1 = "hello";
+//        String str2 = new String("hello").intern();
+//        System.err.println(str1 == str2);
+        FileReader fileReader = new FileReader("/private/tmp/autosignin.log");
+
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        try {
+            String s = bufferedReader.readLine();
+            System.out.println(s);
+        }catch (FileNotFoundException e){
+            System.out.println("FNF");
+        }catch (IOException e){
+            System.out.println("IO");
+        }catch (Exception e){
+            System.out.println("EX");
+        }
+
+        int a = (int) '我';
     }
 }
