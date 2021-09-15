@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Stack;
 
 /**
  * @author: Sapeurs
@@ -26,21 +27,12 @@ public class test {
         String[] ops = {"1", "C", "-62", "-45", "-68"};
         System.out.println(solution.calPoints(ops));
     }
-
-    @Test
-    public void test1() {
-        char a = '5';
-        char b = '9';
-        String c = "-24";
-        System.out.println(Integer.parseInt(c));
-    }
-
 }
 
 
 class Solution {
     public int calPoints(String[] ops) {
-        Deque<Integer> stack = new ArrayDeque<>();
+        Stack<Integer> stack = new Stack<>();
         int a, b, sum = 0;
         for (String s : ops
         ) {
