@@ -5,8 +5,8 @@ public class test {
         Solution2 solution2 = new Solution2();
         int[] ints = {4, 2, 5, 7};
         int[] result = solution2.sortArrayByParityII(ints);
-        for (int i = 0; i < result.length; i++) {
-            System.out.println(result[i]);
+        for (int j : result) {
+            System.out.println(j);
         }
 
     }
