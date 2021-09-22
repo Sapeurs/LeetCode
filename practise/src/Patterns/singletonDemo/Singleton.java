@@ -42,7 +42,11 @@ class Single1 {
 
 /*
 完整模式：线程安全+Volatile
-Volatile防止指令重排
+
+1.在堆内存上分配对象的存储空间
+2.在堆内存上初始化对象
+3.设置s指向刚分配的内存地址
+Volatile防止第2步和第3步发生指令重排
  */
 class Single2 {
     private static volatile Single2 s = null;
@@ -51,7 +55,7 @@ class Single2 {
     }
 
     public static Single2 getInstance() {
-        if (s == null) {
+        if (s == null) {//第一个判断s==null用来提升效率
             synchronized (Single2.class) {
                 if (s == null)
                     s = new Single2();

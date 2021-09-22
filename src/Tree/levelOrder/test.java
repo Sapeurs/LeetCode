@@ -31,12 +31,7 @@ class Solution {
             if (node.right != null)
                 queue.offer(node.right);
         }
-        int size = list.size();
-        int[] res = new int[size];
-        for (int i = 0; i < size; i++) {
-            res[i] = list.get(i);
-        }
-        return res;
+        return list.stream().mapToInt(integer -> integer).toArray();
     }
 
 }

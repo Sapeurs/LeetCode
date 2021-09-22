@@ -1,5 +1,9 @@
 package Linked.getIntersectionNode;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @author: Sapeurs
  * @date: 2021/5/31 22:08
@@ -19,6 +23,21 @@ class Solution {
             B = B != null ? B.next : headA;
         }
         return A;
+    }
+
+    //hash表
+    public ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
+        Set<ListNode> set = new HashSet<>();
+        while (headA != null){
+            set.add(headA);
+            headA = headA.next;
+        }
+        while (headB != null){
+            if (set.contains(headB))
+                return headB;
+            headB = headB.next;
+        }
+        return null;
     }
 }
 

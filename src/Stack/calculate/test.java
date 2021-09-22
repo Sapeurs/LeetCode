@@ -6,7 +6,12 @@ import java.util.LinkedList;
 /**
  * @author: Sapeurs
  * @date: 2021/9/15 9:58
- * @description:
+ * @description: 面试题 16.26. 计算器
+ *
+ * 给定一个包含正整数、加(+)、减(-)、乘(*)、除(/)的算数表达式(括号除外)，计算其结果。
+ *
+ * 表达式仅包含非负整数，+， - ，*，/ 四种运算符和空格 。 整数除法仅保留整数部分。
+ *
  */
 public class test {
     public static void main(String[] args) {
@@ -18,7 +23,7 @@ public class test {
 
 class Solution {
     public int calculate(String s) {
-        Deque<Integer> stack = new LinkedList<Integer>();
+        Deque<Integer> stack = new LinkedList<>();
         char preSign = '+';
         int num = 0;
         int n = s.length();

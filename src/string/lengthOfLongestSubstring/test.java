@@ -1,5 +1,7 @@
 package string.lengthOfLongestSubstring;
 
+import java.util.HashMap;
+
 /**
  * @author: Sapeurs
  * @date: 2021/5/10 21:24
@@ -10,7 +12,7 @@ package string.lengthOfLongestSubstring;
 public class test {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.lengthOfLongestSubstring("pwwkew"));
+        System.out.println(solution.lengthOfLongestSubstring1("abba"));
     }
 }
 
@@ -31,6 +33,22 @@ class Solution {
                 }
             }
             max = Math.max(max, j - i + 1);
+        }
+        return max;
+    }
+
+    public int lengthOfLongestSubstring1(String s) {
+        if (s.length() == 0) return 0;
+        int max = 0;
+        int left = 0;
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (map.containsKey(s.charAt(i))){
+                //更新左指针
+                left = Math.max(left, map.get(s.charAt(i)) + 1);
+            }
+            map.put(s.charAt(i),i);
+            max = Math.max(max, i - left + 1);
         }
         return max;
     }

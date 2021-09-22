@@ -61,7 +61,7 @@ class Solution {
         return node.next;
     }
 
-    //K解法
+    //K神的解法
     public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
         ListNode dum = new ListNode(0), cur = dum;
         while (l1 != null && l2 != null) {

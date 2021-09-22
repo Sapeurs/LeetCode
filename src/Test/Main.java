@@ -1,8 +1,7 @@
 package Test;
 
 import java.io.*;
-import java.util.Date;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author: Sapeurs
@@ -39,21 +38,5 @@ public class Main {
 //        String str1 = "hello";
 //        String str2 = new String("hello").intern();
 //        System.err.println(str1 == str2);
-        FileReader fileReader = new FileReader("/private/tmp/autosignin.log");
-
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-        try {
-            String s = bufferedReader.readLine();
-            System.out.println(s);
-        }catch (FileNotFoundException e){
-            System.out.println("FNF");
-        }catch (IOException e){
-            System.out.println("IO");
-        }catch (Exception e){
-            System.out.println("EX");
-        }
-
-        int a = (int) '我';
     }
 }

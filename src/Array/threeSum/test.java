@@ -58,4 +58,39 @@ class Solution {
         }
         return res;
     }
+
+
+    //排序+双指针
+    public List<List<Integer>> threeSum1(int[] nums) {
+        //首先应对数组排序
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+        //k指针由左至右遍历，右边至少有两个值
+        for (int k = 0; k < nums.length - 2; k++) {
+            //如果nums[k]>0，表明右边没有与nums[k]相加等于0的数字组合
+            if (nums[k] > 0) break;
+            //如果有多个nums[k],取最后一个
+            if (k > 0 && nums[k] == nums[k - 1]) continue;
+            int i = k + 1, j = nums.length - 1;
+            while (i < j){
+                int sum = nums[i] + nums[j] + nums[k];
+                if (sum < 0){//sum<0,i指针右移，增加sum
+                    while (i < j && nums[i] == nums[i+1]){ //如果有多个nums[i],取最后一个
+                        i++;
+                    }
+                }else if (sum > 0){//sum>0,j指针左移，减小sum
+                    while (i < j && nums[j] == nums[j-1]){//如果有多个nums[j],取最前一个
+                        j--;
+                    }
+                }else {
+                    //找到一种组合
+                    res.add(new ArrayList<>(Arrays.asList(nums[k],nums[j],nums[i])));
+                    //进行去重
+                    while (i < j && nums[i] == nums[i+1]) i++;
+                    while (i < j && nums[j] == nums[j-1]) j--;
+                }
+            }
+        }
+        return res;
+    }
 }
