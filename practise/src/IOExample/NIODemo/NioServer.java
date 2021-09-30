@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * @author: Spaeurs
  * @date: 2021/7/28 10:09
- * @description: NIO 测试服务端
+ * @description: NIO 测试服务端 : Reactor模型中的单线程模型
  */
 public class NioServer {
 

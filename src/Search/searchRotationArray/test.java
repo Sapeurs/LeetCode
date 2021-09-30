@@ -14,7 +14,7 @@ package Search.searchRotationArray;
  */
 public class test {
     public static void main(String[] args) {
-        int[] nums = {1};
+        int[] nums = {7,8,9,10,11,12,13,14,15,16,0,1,2,3,4,5,6};
         Solution solution = new Solution();
         int ans = solution.search(nums, 1);
         System.out.println(ans);
@@ -26,11 +26,12 @@ class Solution {
     public int search(int[] nums, int target) {
         int len = nums.length - 1;
         int left = 0, right = len, mid, ans;
+        //先找到旋转点
         while (left < right) {
             mid = (left + right) / 2;
-            if (nums[mid] > nums[right]) {
+            if (nums[mid] > nums[right]) {//旋转点在mid右边
                 left = mid + 1;
-            } else {
+            } else {//旋转点在mid左边
                 right = mid;
             }
         }

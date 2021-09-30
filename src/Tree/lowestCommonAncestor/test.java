@@ -26,7 +26,6 @@ class Solution {
      * @return
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-
         if (root == null)
             return null;
         if (root == p || root == q)//只要有一个是根节点那么公共祖先一定是根节点

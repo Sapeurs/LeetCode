@@ -39,7 +39,14 @@ public class Main {
 //        String str2 = new String("hello").intern();
 //        System.err.println(str1 == str2);
 
+        Deque<Integer> deque = new LinkedList<>();
+        deque.addLast(1);
+        deque.addLast(2);
+        deque.addLast(3);
+        System.out.println(deque.removeFirst());
     }
+
+
 
 
 }
