@@ -17,7 +17,7 @@
     <orderEntry type="library" name="Maven: org.testng:testng:7.4.0" level="project" />
     <orderEntry type="library" name="Maven: com.beust:jcommander:1.78" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jquery:3.5.1" level="project" />
-    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.63.Final" level="project" />
   </component>
 </module>
