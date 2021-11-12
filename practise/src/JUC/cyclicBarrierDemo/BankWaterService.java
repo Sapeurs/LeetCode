@@ -56,5 +56,6 @@ public class BankWaterService implements Runnable{
     public static void main(String[] args) {
         BankWaterService bankWaterService = new BankWaterService();
         bankWaterService.count();
+        System.out.println("Main thread finished");
     }
 }
